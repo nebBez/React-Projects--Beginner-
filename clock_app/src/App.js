@@ -12,7 +12,8 @@ function App() {
 
   useEffect(()=>{
 
-    setInterval(()=>changeTime(new Date()), (1000))
+    setInterval(()=>changeTime(new Date()), 1000) 
+    // SetInterval works by executing a function after the specified time 
   }, []
   )
 
@@ -20,8 +21,7 @@ function App() {
 
     <div className="app">
       <h2>Simple Clock App</h2>
-      <h1>{time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds()}</h1>
-
+      <h1>{time.toLocaleTimeString()}</h1>
     </div>
 
   )
