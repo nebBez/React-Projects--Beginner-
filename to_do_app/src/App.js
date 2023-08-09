@@ -1,5 +1,6 @@
 import './App.css';
-import ToDo from './components/ToDo.js';
+import AddToDo from './components/AddToDo';
+import ToDo from './components/ToDo';
 import {useState} from 'react';
 
 function App() {
@@ -14,10 +15,10 @@ function App() {
     <div className="App">
       -set up to do props
       <h1>To Do App</h1>
-
-      <ToDo items={toDoList}/>
-      -pass props to to doo component
-        -use map/filler
+      {toDoList.map(items =>
+        <ToDo item={items.name}/>
+        )}
+      <AddToDo/>
     </div>
   );
 }

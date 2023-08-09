@@ -5,12 +5,8 @@ function ToDo(props){
         
         <div className="ToDo">
             <ul>
-                <li>
-                {props.items.map(todo =>(
-                    todo.name
-                ))}
-                </li>
-                
+                <input type="checkbox"/>
+                {props.item}
             </ul>
         </div>
     );
