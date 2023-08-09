@@ -6,7 +6,7 @@ function ToDo(props){
         <div className="ToDo">
             <ul>
                 <input type="checkbox"/>
-                {props.item}
+                {props.name}
             </ul>
         </div>
     );

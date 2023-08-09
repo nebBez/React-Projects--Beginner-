@@ -13,10 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      -set up to do props
       <h1>To Do App</h1>
       {toDoList.map(items =>
-        <ToDo item={items.name}/>
+        <ToDo name={items.name}/>
         )}
       <AddToDo/>
     </div>
