@@ -11,13 +11,22 @@ function App() {
   ]
   );
 
+  const addListHandler = enteredToDo =>{
+    addList(prevList =>{
+      const updatedList = [...prevList];
+      updatedList.unshift({name: enteredToDo, id: Math.random().toString() });
+      return updatedList;
+    });
+  }
+
   return (
     <div className="App">
       <h1>To Do App</h1>
       {toDoList.map(items =>
         <ToDo name={items.name}/>
         )}
-      <AddToDo/>
+      <AddToDo onAddHandler={addListHandler}/>
+
     </div>
   );
 }
