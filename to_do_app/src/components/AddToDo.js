@@ -1,18 +1,32 @@
+import { useState } from "react";
 
 
-function AddToDo(){
+function AddToDo(props){
+
+    const [toDoItem, setToDo] = useState('');
+
+    const inputHandler = event =>{
+        event.preventDefault();
+        setToDo(event.target.value);
+    };
+
+    const formHandler = event =>{
+        event.preventDefault();
+        props.onAddHandler(toDoItem);
+    };
 
     return(
         <div className="AddToDo">
-            <input
-                type="text"
-                placeholder="Add to list..."
-            />
-            <button
-                >
-                Add
-            </button>
-            
+            <form onSubmit={formHandler}>
+                <input
+                    type="text"
+                    placeholder="Add to list..."
+                    onChange={inputHandler}
+                />
+                <button type="submit">
+                    Add
+                </button>
+            </form>
         </div>
     );
 }

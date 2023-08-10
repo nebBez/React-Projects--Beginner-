@@ -7,7 +7,6 @@ function ToDo(props){
             <ul>
                 <input type="checkbox"/>
                 {props.name}
-                //pass a prop up so you can delete it from main list (add delete button)
             </ul>
         </div>
     );
