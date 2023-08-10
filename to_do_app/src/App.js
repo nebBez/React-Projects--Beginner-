@@ -17,13 +17,21 @@ function App() {
       updatedList.unshift({name: enteredToDo, id: Math.random().toString() });
       return updatedList;
     });
-  }
+  };
+
+  const deleteHandler = name =>{
+    addList(prevList =>{
+      const newList= prevList.filter((item) => item.name !== name);
+      return newList;
+    });
+  };
 
   return (
     <div className="App">
       <h1>To Do App</h1>
       {toDoList.map(items =>
-        <ToDo name={items.name}/>
+        <ToDo name={items.name}
+        onDeleteClick={deleteHandler}/>
         )}
       <AddToDo onAddHandler={addListHandler}/>
 
