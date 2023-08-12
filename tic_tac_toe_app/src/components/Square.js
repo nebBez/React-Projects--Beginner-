@@ -1,12 +1,9 @@
 import {useState} from 'react';
 
-function Square(prop){
 
-    const [val, changeVal] = useState(prop.value);
-    
-    const clickHandler=()=>{
-        changeVal("x");
-    };
+function Square({value, clickHandler}){
+
+    const [val, changeVal] = useState(value);
 
     return(
         <>
