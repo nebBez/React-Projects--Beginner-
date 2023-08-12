@@ -2,21 +2,24 @@ import { useState } from 'react';
 import './App.css';
 import Square from './components/Square.js';
 
-const [squares, setSquares] = useState(Array(9).fill("o"));
-
-function handleClick(i){
-  const nextSquares = squares.slice();
-  nextSquares[i] = "x";
-  setSquares(nextSquares);
-}
 
 function Board() {
-
+  
+  const [squares, setSquares] = useState(Array(9).fill('null'));
+  
+  function handleClick(i){
+    const nextSquares = squares.slice();
+    console.log(nextSquares);
+    nextSquares[i] = "x";
+    console.log(nextSquares);
+    setSquares(prev => nextSquares);
+    console.log(squares);
+  };
 
   return (
     <> {/* <> </> tags can be used instead of div*/}
       <div className="board-row">
-        <Square value={squares[0]} clickHandler={handleClick(0)}/>
+        <Square value={squares[0]} clickHandler={()=>handleClick(0)} />
         <Square value={squares[1]}/>
         <Square value={squares[2]}/>
       </div>
