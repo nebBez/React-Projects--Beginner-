@@ -7,10 +7,17 @@ function Board() {
   
   
   const [squares, setSquares] = useState(Array(9).fill('n'));
-  
+  const [xIsNext, setXIsNext] = useState(true);
+
   function handleClick(i){
     const nextSquares = squares.slice();
-    nextSquares[i] = 'x';
+    if (!xIsNext){
+      nextSquares[i] = "o";
+    }
+    else{
+      nextSquares[i] = "x";
+    }
+    setXIsNext(!xIsNext);
     setSquares(nextSquares);
   }
 
