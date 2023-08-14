@@ -11,7 +11,6 @@ function Board() {
 
   function handleClick(i){
     if (squares[i] || calculateWinner(squares)){
-      
       return;
     }
     const nextSquares = squares.slice();
@@ -25,10 +24,21 @@ function Board() {
     setSquares(nextSquares);
   }
 
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner){
+    status = 'Winner: ' + winner;
+  }
+  else{
+    status = 'Next player: '+ (xIsNext?'x':'o');
+  }
+
   return (
     <> {/* <> </> tags can be used instead of div*/}
+      
       <h1>Tic Tac Toe Game</h1>
       
+      <div>{status}</div>
       <div className="board-row">
         <Square value={squares[0]} clickHandler={()=>handleClick(0)} />
         <Square value={squares[1]} clickHandler={()=>handleClick(1)}/>
