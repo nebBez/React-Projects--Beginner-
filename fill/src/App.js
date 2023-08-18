@@ -54,7 +54,7 @@ function ProductTable({products}){
   );
 }
 
-function searchBar(){
+function SearchBar(){
   return(
     <form>
       <input type='text' placeholder='Search...'/> 
@@ -70,12 +70,12 @@ function searchBar(){
 function FilterableProductTable({ products }){
   return (
     <div>
-      <searchBar />
+      <SearchBar />
       <ProductTable products={products} />
     </div>
   )
 }
-
+//
 const PRODUCTS = [
   {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
   {category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit"},
